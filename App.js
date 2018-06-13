@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image, ScrollView } from 'react-native';
 
 export default class App extends React.Component {
   render() {
@@ -9,13 +9,42 @@ export default class App extends React.Component {
           <Text style={styles.topText}>TripClick</Text>
         </View>
 
+        <ScrollView>
+
         <View style={styles.content}>
-          <Text style={styles.contentText}>Маяк(Бесплатно)</Text>
-          <Text style={styles.contentText}>Фуникулер(Бесплатно)</Text>
-          <Text style={styles.contentText}>Маршрут в разработке</Text>
-          <Text style={styles.contentText}>Маршрут в разработке</Text>
-          <Text style={styles.contentText}>Маршрут в разработке</Text>
+          <View style={styles.contentBox}>
+            <Image style={styles.contentImgMyac} source={require('./img/myac.png')} />
+            <Text style={styles.contentText}>Маяк(Бесплатно)</Text>
+          </View>
+          <View style={styles.contentLine}></View>
+          <View style={styles.contentBox}>
+            <Image style={styles.contentImg} source={require('./img/funik.png')} />
+            <Text style={styles.contentText}>Фуникулер(Бесплатно)</Text>
+          </View>
+          <View style={styles.contentLine}></View>
+          <View style={styles.contentBox}>
+            <Image style={styles.contentImg} source={require('./img/lock.png')} />
+            <Text style={styles.contentText}>Маршрут в разработке</Text>
+          </View>
+          <View style={styles.contentLine}></View>
+          <View style={styles.contentBox}>
+            <Image style={styles.contentImg} source={require('./img/lock.png')} />
+            <Text style={styles.contentText}>Маршрут в разработке</Text>
+          </View>
+          <View style={styles.contentLine}></View>
+          <View style={styles.contentBox}>
+            <Image style={styles.contentImg} source={require('./img/lock.png')} />
+            <Text style={styles.contentText}>Маршрут в разработке</Text>
+          </View>
+          <View style={styles.contentLine}></View>
+          <View style={styles.contentBox}>
+            <Image style={styles.contentImg} source={require('./img/lock.png')} />
+            <Text style={styles.contentText}>Маршрут в разработке</Text>
+          </View>
+          <View style={styles.contentLine}></View>
         </View>
+
+        </ScrollView>
 
         <View style={styles.bottom}>
           <Text style={styles.bottomText}>Маршруты</Text>
@@ -31,7 +60,7 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#99cdff',
   },
   top: {
     backgroundColor: '#3d81ee',
@@ -41,23 +70,45 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   topText: {
-    fontSize: 23,
+    fontSize: 21,
     color: '#fff',
     paddingTop: 20,
     width: 110,
   },
   content: {
-    backgroundColor: '#99cdff',
     height: '78%',
-    paddingLeft: 12,
-    paddingRight: 12,
+    paddingLeft: 15,
+    paddingRight: 15,
   },
-  contentText: {
+  contentLine: {
     borderBottomColor: '#fff',
     borderBottomWidth: 2,
+  },
+  contentBox: {
+    backgroundColor: '#c1dafe',
+    borderRadius: 20,
+    margin: 10,
+    height: 80,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  contentImg: {
+    marginTop: 17,
+    marginLeft: 15,
+    height: 42,
+    width: 35,
+  },
+  contentImgMyac: {
+    marginTop: 17,
+    marginLeft: 15,
+    height: 42,
+    width: 40,
+  },
+  contentText: {
     color: '#fff',
-    fontSize: 20,
-    paddingTop: 55,
+    fontSize: 18,
+    width: 255,
+    paddingTop: 25,
     paddingLeft: 10,
     paddingRight: 10,
   },
