@@ -6,6 +6,7 @@ export default class App extends React.Component {
     return (
       <View style={styles.container}>
         <View style={styles.top}>
+          <Image style={styles.topImg} source={require('./img/back.png')} />
           <Text style={styles.topText}>TripClick</Text>
         </View>
 
@@ -47,10 +48,22 @@ export default class App extends React.Component {
         </ScrollView>
 
         <View style={styles.bottom}>
-          <Text style={styles.bottomText}>Маршруты</Text>
-          <Text style={styles.bottomText}>Купленное</Text>
-          <Text style={styles.bottomText}>Избранное</Text>
-          <Text style={styles.bottomText}>Настройки</Text>
+          <View>
+            <Image style={styles.bottomIconHome} source={require('./img/home.png')} />
+            <Text style={styles.bottomText}>Маршруты</Text>
+          </View>
+          <View>
+            <Image style={styles.bottomIconPortfolio} source={require('./img/portfolio.png')} />
+            <Text style={styles.bottomText}>Купленное</Text>
+          </View>
+          <View>
+            <Image style={styles.bottomIconFav} source={require('./img/fav.png')} />
+            <Text style={styles.bottomText}>Избранное</Text>
+          </View>
+          <View>
+            <Image style={styles.bottomIconSet} source={require('./img/set.png')} />
+            <Text style={styles.bottomText}>Настройки</Text>
+          </View>
         </View>
       </View>
     );
@@ -68,6 +81,13 @@ const styles = StyleSheet.create({
     width: '100%',
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  topImg: {
+    position: 'absolute',
+    top: 38,
+    left: 15,
+    height: 25,
+    width: 25,
   },
   topText: {
     fontSize: 21,
@@ -117,10 +137,36 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignSelf: 'stretch',
     justifyContent: 'space-between',
+    paddingTop: 10,
+    paddingLeft: 15,
+    paddingRight: 15,
     height: '10%',
     width: '100%',
   },
   bottomText: {
     color: '#767676',
-  }
+    fontSize: 10,
+  },
+  bottomIconHome: {
+    marginLeft: 14,
+    marginTop: 4,
+    marginBottom: -2,
+    height: 27,
+    width: 28,
+  },
+  bottomIconPortfolio: {
+    marginLeft: 9,
+    height: 30,
+    width: 40,
+  },
+  bottomIconFav: {
+    marginLeft: 7,
+    height: 30,
+    width: 46,
+  },
+  bottomIconSet: {
+    marginLeft: 11,
+    height: 30,
+    width: 34,
+  },
 });
